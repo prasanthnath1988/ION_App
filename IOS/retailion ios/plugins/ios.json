@@ -1,0 +1,42 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.retails.ion"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.retails.ion"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.retails.ion"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.retails.ion"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.retails.ion"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.retails.ion"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.retails.ion"
+        },
+        "cordova-plugin-camera": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+        }
+    }
+}

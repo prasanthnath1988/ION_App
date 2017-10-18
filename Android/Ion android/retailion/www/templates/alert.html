@@ -1,0 +1,27 @@
+<ion-pane>
+	<ion-header-bar align-title="left" class="innerHdng">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios-arrow-left" ng-click="back()"></button>
+		</div>
+		<h1 class="title">Alert</h1>
+		<div class="buttons">
+			<button class="button button-icon icon ion-power" ng-click="logout()"></button>
+		</div>
+	</ion-header-bar>
+	<ion-content padding="true" style="background: #F1F5F8;">
+		<ion-list class="accordionList">
+			<div ng-repeat="group in alert" ng-show="group.deleteFlag==0">
+				<ion-item class="item-stable left-icon right-icon unread" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+					<i class="ion-email msgStatus"></i>
+					{{group.Title}}
+					<i class="icon" ng-class="isGroupShown(group) ? 'ion-android-remove-circle' : 'ion-android-add-circle'"></i>
+				</ion-item>
+				<ion-item class="item-accordion" ng-show="isGroupShown(group)">
+					<p><strong><small>{{group.DateTime}}</small></strong></p><!-- Feb 20, 2017 | 6.45 PM -->
+					<div ng-bind-html="group.Message"></div>
+					<a class="button button-small icon-left ion-trash-a button-clear button-dark">Delete Message</a>
+				</ion-item>
+			</div>
+		</ion-list>
+	</ion-content>
+</ion-pane>

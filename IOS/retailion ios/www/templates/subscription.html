@@ -1,0 +1,66 @@
+<ion-pane>
+	<ion-header-bar align-title="left" class="innerHdng">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios-arrow-left" ng-click="back()"></button>
+		</div>
+		<h1 class="title">Subscription</h1>
+		<div class="buttons">
+			<button class="button button-icon icon ion-power" ng-click="logout()"></button>
+		</div>
+	</ion-header-bar>
+	<ion-content padding="false" class="text-center" style="background: #F1F5F8;">
+		<div style="position: relative;padding-top: 22px;">
+		<div class="progress ng-cloak" ng-style="getStyle()">
+		<span ng-style="{color: getColor()}">{{ preciseCurrent || current }}</span> / <span ng-style="{color: bgColor}">{{ max }}</span><label>Days Used</label></div>
+		<round-progress
+                max="max"
+                current="current"
+                color="{{ getColor() }}"
+                bgcolor="{{ bgColor }}"
+                radius="{{ radius }}"
+                semi="isSemi"
+                rounded="rounded"
+                stroke="{{ stroke }}"
+                clockwise="clockwise"
+                responsive="responsive"
+                duration="{{ duration }}"
+                animation="{{ currentAnimation }}"
+                offset="{{ offset }}"
+                animation-delay="{{ animationDelay }}"
+                on-render="showPreciseCurrent">
+
+                <svg>
+                    <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="5%"  stop-color="green"/>
+                        <stop offset="95%" stop-color="gold"/>
+                    </linearGradient>
+                </svg>
+            </round-progress>
+		</div>
+		
+			<div class="subscriptionContent">
+				<strong ng-style="{color: bgColor}">{{userData.RemainingDays}}</strong>
+				<label>Days Remaining</label>
+				<div class="divider"></div>
+				<strong ng-style="{color: getColor()}">{{formatGB(userData.PrimaryUsedQuotaMB)}}</strong><!-- 15.75 -->
+				<label>GB Used</label>
+				
+				<label class="curPlan">Current Plan</label>
+				<!-- <h2 ng-style="{color: getColor()}">{{planDetails.NAME}}</h2> -->
+				<h2 ng-style="{color: getColor()}">{{userData.Plan}}</h2>
+				<label>Plan expires on</label>
+				<!-- <p>25 Marh 2017 | 10:45 AM</p> -->
+				<p>{{userData.ExpiryDate}}</p>
+				<button class="button button-clear button-full button-energized"  ng-click="renewPlan()">
+					<label>Go with the same plan for another cycle</label>
+					<i class="ion-loop"></i>
+					<span>Renew Plan</span>
+				</button>
+				<button class="button button-clear button-full button-royal" ng-click="upgradePlan()">
+					<label>Opt for a faster / extended duration plan</label>
+					<i class="ion-ios-paperplane"></i>
+					<span>Upgrade Plan</span>
+				</button>
+			</div>
+	</ion-content>
+</ion-pane>

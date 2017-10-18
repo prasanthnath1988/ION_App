@@ -1,0 +1,57 @@
+<ion-pane> <ion-content has-header="false" class="bodyBg"
+	padding="true">
+<div class="loginWrapper">
+	<div class="logoTxt">
+		<img ng-show="!forgotPwd" src="img/logo.png" class="logo" />
+		<h4 class="forgotHead" ng-show="forgotPwd">Forgot Password</h4>
+	</div>
+	<div class="list loginForm" ng-show="!forgotPwd">
+
+		<label class="item item-input"> <input type="text"
+			placeholder="i-On User ID" id="ucode" />
+		</label> 
+		<label class="item item-input item-icon-right">
+			<i class="icon ion-eye" on-touch="showPassword = !showPassword"></i>
+			 <input type="password" id="upassword" placeholder="Password" ng-model="password" ng-hide="showPassword">
+			 <input type="text" id="upassword" placeholder="Password" ng-model="password" ng-show="showPassword">
+		</label>
+		<button ng-click="forgotPwd=true;" class="button button-clear button-positive forgotPwd">
+			Forgot Password?
+		</button>
+		<!-- <label class="item item-input item-icon-right"" ng-show="!showPassword">
+					<input type="password" placeholder="Password" id="upassword"/>
+					
+					<img src="img/eye_close.png" style="  height: 30px; padding-right: 2%;" >
+				</label>
+				<label class="item item-input item-icon-right"" ng-show="showPassword">
+					<input type="text" placeholder="Password" id="upassword"/>
+					<img src="img/eye_open.png" style="  height: 30px; padding-right: 2%;" ng-click="showPassword==flase;">
+					
+				</label> -->
+	</div>
+	<div class="list loginForm" ng-show="forgotPwd">
+
+		<label class="item item-input">
+			<input type="text" placeholder="i-On User ID"  id="userid"/>
+		</label>
+		<label class="item item-input">
+			<input type="number" placeholder="Mobile"  id="mobile"/>
+		</label>
+	</div>
+	<!--<div class="text-center" ng-show="forgotPwd">-->
+		<!--<button class="button button-energized button-block mrgn0 " ng-click="forgotPwd=false;">SIGN IN</button>-->
+		<!--<button class="button button-energized button-block mrgn0 " ng-click="resetPassword()">Submit</button>-->
+	<!--</div>-->
+	<div class="row" ng-show="forgotPwd">
+		<div class="col">
+			<button class="button button-block button-energized" ng-click="forgotPwd=false;">SIGN IN</button>
+		</div>
+		<div class="col">
+			<button class="button button-block button-energized" ng-click="resetPassword()">Submit</button>
+		</div>
+	</div>
+		<div class="text-center" ng-show="!forgotPwd">
+			<button class="button button-energized button-block mrgn0 " ng-click="login()">SIGN IN</button>
+		</div>
+</div>
+</ion-content> </ion-pane>

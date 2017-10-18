@@ -1,0 +1,33 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.retails.ion"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.retails.ion"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.retails.ion"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.retails.ion"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.retails.ion"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.retails.ion"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.retails.ion"
+        }
+    },
+    "dependent_plugins": {}
+}

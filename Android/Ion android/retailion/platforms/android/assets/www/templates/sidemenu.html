@@ -1,0 +1,40 @@
+<div class="sideMenuUserInfo"  >
+	<!-- <img src="img/userImg.jpg" /> -->
+	 
+	 <!-- 	<img src="img/userImage.jpg" class="userImage" /> -->
+	 	<img ng-src="{{imgPath}}" class="userImage" />
+	
+	<h2>{{userData.Name | titleCase }}</h2>
+	<div class="row">
+		<div class="col">
+			<strong>{{userData.RemainingDays}}</strong>
+			<label>Remaining Days</label>
+		</div>
+		<div class="col">
+			<strong>{{userData.Balance}}</strong>
+			<label>Wallet Balance</label>
+		</div>
+	</div>
+</div>
+<div class="list sidemenuLinkList">
+	<a ng-click="profile();"  class="item item-icon-left item-icon-right" href="javascript: void(0);" menu-close ><!-- ng-click="profile();" -->
+		<i class="icon ion-person"></i> My Profile
+		<i class="icon ion-ios-arrow-right"></i>
+	</a>
+	<a ng-click="alert();" class="item item-icon-left item-icon-right" href="javascript: void(0);" menu-close>
+		<i class="icon ion-email"></i> Alerts
+		<!-- <span class="badge badge-light">4</span> -->
+		<i class="icon ion-ios-arrow-right"></i>
+	</a>
+	<a ng-click="offer();" class="item item-icon-left item-icon-right" href="javascript: void(0);" menu-close>
+		<i class="icon ion-filing"></i> Offers
+		<!-- <span class="badge badge-light">4</span> -->
+		<i class="icon ion-ios-arrow-right"></i>
+	</a>
+	<a ng-click="help();" class="item item-icon-left"  menu-close >
+		<i class="icon ion-help-circled"></i> Help
+	</a>
+	<a ng-click="aboutus();" class="item item-icon-left" href="javascript: void(0);" menu-close>
+		<i class="icon ion-android-alert"></i> About
+	</a>
+</div>

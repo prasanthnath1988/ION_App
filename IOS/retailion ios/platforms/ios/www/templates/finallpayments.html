@@ -1,0 +1,147 @@
+<div ng-controller="finallpaymentsController">
+<ion-pane >
+	<ion-header-bar align-title="left" class="innerHdng">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios-arrow-left" ng-click="back()"></button>
+		</div>
+		<h1 class="title">Selected Plan- {{planData.NAME}}</h1>
+		<div class="buttons">
+			<button class="button button-icon icon ion-power" ng-click="logout()"></button>
+		</div>
+	</ion-header-bar>
+	<ion-content padding="false" style="background: #F1F5F8;">
+		<div class="card" style="margin-top: 0px;">
+			<div class="padding text-center paymentHeaderText" >
+				<h2>Current Payable</h2>
+				<h1><i class="icon-inr"></i> {{planData.MRP}}</h1>
+				<!-- <p>
+					Last Date for Payment<br /> <span>21 January 2017</span>
+				</p> -->
+			</div>
+			<div class="list paymenntsOpitons" >
+				<div class="item item-divider text-center paynowTxt">
+					Pay Now Using
+				</div>
+				<!-- <ion-checkbox ng-model="filter.netbanking">NETBANKING <label><i class="icon-inr"></i> <i class="ion-monitor"></i></label></ion-checkbox>  
+				<ion-checkbox ng-model="filter.pickupReq">PICKUP REQUEST <label><i class="ion-person"></i></label></ion-checkbox> -->
+				<ion-radio icon="ion-android-checkbox-outline" name="rd" ng-model="paymentType" ng-value="'NETBANKING'" ng-click="clickedPaymentType(ng-value);">
+				<i class="ion-android-checkbox-outline-blank"></i> ONLINE PAYMENT <label><i class="icon-inr"></i> <i class="ion-monitor"></i></label></ion-radio>
+				<ion-radio icon="ion-android-checkbox-outline" name="rd" ng-model="paymentType" ng-value="'PICKUPREQUEST'" ng-click="clickedPaymentType(ng-value);">
+				<i class="ion-android-checkbox-outline-blank"></i> PICKUP REQUEST <label><i class="ion-person"></i></label></ion-radio>
+				
+				
+				<ion-checkbox  id="advance" ng-model="advance" ng-click="advanceChange()">ADVANCE RENEWAL</ion-checkbox>  
+			</div>
+			<div>
+				<button class="button button-balanced" ng-click="pay()" style=" width: 100%;">
+				  	Make Payment
+				</button>
+			</div>
+			<!-- <div class="padding text-center paymentHeaderText">
+				<h2>Current Payable</h2>
+				<h1><i class="icon-inr"></i> 0</h1>
+				<p>
+					your payments are up to date.
+				</p>
+			</div>
+			<div class="text-center loveYouWrapper">
+				<hr />
+				<i class="icon-smile-o"></i>
+				<h1>We love you !</h1>
+				<p>Thank you for being a wonderful customer!</p>
+			</div> -->
+		</div>
+		<div class="card paymentHistory" style="margin-top: 0px;">
+			<div class="list">
+				<div class="item item-icon-right item-divider text-center" ng-click="slideDown();">
+					PAYMENT HISTORY
+					<!-- <i class="icon ion-android-arrow-dropdown-circle"></i> -->
+					<i class="icon ion-android-arrow-dropdown-circle" ng-show="drop"></i>
+					<i class="icon ion-android-arrow-dropup-circle" ng-show="!drop"></i>
+				</div>
+				<div class="row paymentshistoryList" ng-repeat="p in paymentHistory" ng-show="drop">
+					<div class="col col-25 text-center">
+						<label><i class="icon-inr"></i></label>
+						<strong>{{p.PaymentAmount}}</strong>
+					</div>
+					<div class="col">
+						<p>
+							{{p.PaymentMode}} <br />
+							Transaction No. {{p.TransactionNo}}
+						</p>
+						<b>{{dateFormat(p.PaymentDate)}}</b>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</ion-content>
+</ion-pane>
+</div>
+
+<!-- <ion-pane>
+	<ion-header-bar align-title="left" class="innerHdng">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios-arrow-left" ng-click="back()"></button>
+		</div>
+		<h1 class="title">Payments</h1>
+		<div class="buttons">
+			<button class="button button-icon icon ion-power" ng-click="logout()"></button>
+		</div>
+	</ion-header-bar>
+	<ion-content padding="false" style="background: #F1F5F8;">
+		<div class="card" style="margin-top: 0px;">
+			<div class="padding text-center" ng-if="one==1">
+				<h2>Current Payable</h2>
+				<h1><i class="icon-inr"></i> 999</h1>
+				<p>
+					Last Date for Payment<br /> <span>21 January 2017</span>
+				</p>
+			</div>
+			<div class="list" ng-if="one==1">
+				<div class="item item-divider text-center">
+					Pay Now Using
+				</div>
+				<ion-checkbox ng-model="filter.credit">CREDIT CARD <label><i class="icon-cc-visa"></i> <i class="icon-cc-mastercard"></i> <i class="ion-card"></i></label></ion-checkbox>
+				<ion-checkbox ng-model="filter.debit">DEBIT CARD <label><i class="icon-cc-visa"></i> <i class="icon-cc-mastercard"></i></label></ion-checkbox>
+				<ion-checkbox ng-model="filter.netbanking">NETBANKING <label><i class="icon-inr"></i> <i class="ion-monitor"></i></label></ion-checkbox>
+				<ion-checkbox ng-model="filter.pickupReq">PICKUP REQUEST <label><i class="ion-person"></i></label></ion-checkbox>
+			</div>
+			<div class="padding text-center">
+				<h2>Current Payable</h2>
+				<h1><i class="icon-inr"></i> 0</h1>
+				<p>
+					your payments are up to date.
+				</p>
+			</div>
+			<hr />
+			<div class="text-center">
+				<i class="icon-smile-o"></i>
+				<h1>We love you !</h1>
+				<p>Thank you for being a wonderful customer!</p>
+			</div>
+		</div>
+		<div class="card" style="margin-top: 0px;">
+			<div class="list">
+				<div class="item item-icon-right item-divider text-center" ng-click="slideDown();">
+					PAYMENT HISTORY
+					<i class="icon ion-android-arrow-dropdown-circle" ng-show="drop"></i>
+						<i class="icon ion-android-arrow-dropup-circle" ng-show="!drop"></i>
+				</div>
+				<div class="row upgradeList" ng-repeat="p in paymentHistory" ng-show="drop">
+					<div class="col col-25 text-center">
+						<label><i class="icon-inr"></i></label>
+						<strong>{{p.PaymentAmount}}</strong>
+					</div>
+					<div class="col">
+						<p>
+							{{p.PaymentMode}} <br />
+							Transaction No. {{p.TransactionNo}}
+						</p>
+						<b>{{dateFormat(p.PaymentDate)}}</b>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-pane> -->

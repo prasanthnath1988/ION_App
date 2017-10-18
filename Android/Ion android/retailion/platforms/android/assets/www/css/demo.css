@@ -1,0 +1,31 @@
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.progress-wrapper{
+    position: relative;
+    margin:20px auto;
+    font-size: 40px;
+}
+
+.progress{
+    position: absolute;
+    color: #bbb;
+    line-height: 1;
+    
+    font-weight: bold;
+}
+.progress label {
+    display: block;
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-size: 0.7em;
+    color: #000;
+}

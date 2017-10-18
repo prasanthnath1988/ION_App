@@ -1,0 +1,33 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "ION"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "ION"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "ION"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "ION"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "ION"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "ION"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "ION"
+        }
+    },
+    "dependent_plugins": {}
+}

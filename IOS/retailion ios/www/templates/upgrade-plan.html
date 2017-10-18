@@ -1,0 +1,78 @@
+<ion-pane>
+	<ion-header-bar align-title="left" class="innerHdng">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios-arrow-left" ng-click="back()"></button>
+		</div>
+		<h1 class="title">{{header}} Plan</h1>
+		<div class="buttons">
+			<button class="button button-icon icon ion-power" ng-click="logout()"></button>
+		</div>
+	</ion-header-bar>
+	<ion-content padding="false" style="background: #F1F5F8;">
+		<div class="card" style="margin-top: 0px;">
+			<div class="padding">
+				<p><strong>Choose from our list of available plans for a better, more powerful Internet experience.</strong></p>
+				<b>Notes:</b>
+				<p>Speed : Refers to internet speed in mbps.</p>
+				<p>Duration : Refers to the validity of plan in days.</p>
+				<p>Tariff : Total payable amount including Taxes.</p>
+
+			</div>
+			<div class="row upgradeList" ng-show="result.guidance.status!='1'">
+				<strong>{{result.guidance.message}}</strong>
+			</div>
+			<div class="row upgradeList" ng-repeat="p in planList" ng-show="result.guidance.status=='1'" >
+				<div class="col">
+					<strong>{{p.NAME}}</strong>
+					<label>{{p.SPEED}} | {{p.Validity}}</label>
+				</div>
+				<div class="col col-25 text-center bgCol">
+					<label><i class="icon-inr"></i></label>
+					<strong>{{p.MRP}}</strong>
+				</div>
+				<div class="col col-20 text-center">
+					<a class="button button-icon icon ion-ios-paperplane" ng-click="buy(p);"></a>
+				</div>
+			</div>
+			<!-- <div class="row upgradeList">
+				<div class="col">
+					<strong>ION 10M-30UL</strong>
+					<label>10MBPS | 30DAYS</label>
+				</div>
+				<div class="col col-25 text-center bgCol">
+					<label><i class="icon-inr"></i></label>
+					<strong>999</strong>
+				</div>
+				<div class="col col-20 text-center">
+					<a class="button button-icon icon ion-ios-paperplane"></a>
+				</div>
+			</div>
+			<div class="row upgradeList">
+				<div class="col">
+					<strong>ION 10M-30UL</strong>
+					<label>10MBPS | 30DAYS</label>
+				</div>
+				<div class="col col-25 text-center bgCol">
+					<label><i class="icon-inr"></i></label>
+					<strong>999</strong>
+				</div>
+				<div class="col col-20 text-center">
+					<a class="button button-icon icon ion-ios-paperplane"></a>
+				</div>
+			</div>
+			<div class="row upgradeList">
+				<div class="col">
+					<strong>ION 10M-30UL</strong>
+					<label>10MBPS | 30DAYS</label>
+				</div>
+				<div class="col col-25 text-center bgCol">
+					<label><i class="icon-inr"></i></label>
+					<strong>999</strong>
+				</div>
+				<div class="col col-20 text-center">
+					<a class="button button-icon icon ion-ios-paperplane"></a>
+				</div>
+			</div> -->
+		</div>
+	</ion-content>
+</ion-pane>

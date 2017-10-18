@@ -1,0 +1,33 @@
+<ion-pane>
+	<ion-header-bar align-title="left" class="innerHdng">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios-arrow-left" ng-click="back()"></button>
+		</div>
+		<h1 class="title">Rate Us</h1>
+		<div class="buttons">
+			<button class="button button-icon icon ion-power" ng-click="logout()"></button>
+		</div>
+	</ion-header-bar>
+	<ion-content padding="false" style="background: #F1F5F8;">
+		<div class="card" style="margin-top: 0px;">
+			<div class="text-center supportResultSuccessful">
+				<i class="ion-checkmark-round"></i>
+				<p class="lg">Your ticket has been successfully resolved</p>
+				<p><small>Ticket no.</small><span>{{data.TicketNumber}}</span></p>
+				<p><small>Attending Service Engineer</small><span>{{data.EngineerName}}</span></p>
+				<!-- <p><small>Mobile</small><span>890890824323</span></p> -->
+				<p><small>Time off Visit</small><span>{{formatDate(data.Date)}}</span></p>
+				<p><small>Ticket Status</small><span>CLOSED</span></p>
+				<p style="margin-bottom: 5px;">Please rate our experience</p>
+				<div class="starts" ng-class="{'oneStar' : starRate >= 1 && starRate <= 2, 'threeStar' : starRate >= 3 && starRate <= 4, 'fiveStar' : starRate == 5}">
+					<i ng-class="starRate >= 1 ?'ion-android-star':'ion-android-star-outline'" ng-click="rateExp(1)"></i>
+					<i ng-class="starRate >= 2 ?'ion-android-star':'ion-android-star-outline'" ng-click="rateExp(2)"></i>
+					<i ng-class="starRate >= 3 ?'ion-android-star':'ion-android-star-outline'" ng-click="rateExp(3)"></i>
+					<i ng-class="starRate >= 4 ?'ion-android-star':'ion-android-star-outline'" ng-click="rateExp(4)"></i>
+					<i ng-class="starRate == 5 ?'ion-android-star':'ion-android-star-outline'" ng-click="rateExp(5)"></i>
+				</div>
+				<button class="button button-energized" ng-click="setRating()">DONE</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-pane>

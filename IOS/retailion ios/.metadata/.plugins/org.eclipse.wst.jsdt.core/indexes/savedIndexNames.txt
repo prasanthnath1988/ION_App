@@ -1,0 +1,1 @@
+INDEX VERSION 1.3+/Users/amitkumarpati/ion app/retailion/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes

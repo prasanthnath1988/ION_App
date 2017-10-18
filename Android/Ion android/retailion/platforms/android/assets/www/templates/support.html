@@ -1,0 +1,128 @@
+<ion-pane ng-controller="supportController">
+	<ion-header-bar align-title="left" class="innerHdng">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios-arrow-left" ng-click="back()"></button>
+		</div>
+		<h1 class="title">Support</h1>
+		<div class="buttons">
+			<button class="button button-icon icon ion-power" ng-click="logout()"></button>
+		</div>
+	</ion-header-bar>
+	<ion-content padding="false" style="background: #F1F5F8;">
+		<div class="card" style="margin-top: 0px;">
+			<!--code for the form-->
+			<div ng-show="complainSuccess==null">
+				<div class="list supportForm">
+					<div class="item item-icon-right">
+						GENERATE A SUPPORT TICKET
+					</div>
+					<label class="item item-input item-stacked-label">
+						<select ng-options="item.name for item in complaintType track by item.ID" 
+							ng-model="selectedComplain" id="selectComplain">
+							<option value="" selected>Select a category</option>
+						</select>
+						{{selectedComplain}}
+					</label>
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Include a message</span>
+						<textarea rows="" cols="" id="message"></textarea>
+					</label>
+				</div>
+				<div class="row">
+					<div class="col">
+						<button class="button button-energized button-full" ng-click="submitTicket()">SUBMIT TICKET</button>
+					</div>
+					<div class="col col-33">
+						<button class="button button-dark button-full" ng-click="cancel();">CANCEL</button>
+					</div>
+				</div>
+			</div>
+			<!-- end here -->
+			<!--code for responce result on button click-->
+			<div ng-show="complainSuccess!=null">
+				<div class="text-center supportResult">
+					<i class="ion-checkmark-round"></i>
+					<!-- <i class="ion-alert-circled"></i> -->
+					<p>
+						Support ticket successfully generated
+					</p>
+					<p><small>Your ticket no. is <br />{{complainSuccess.Ticket}}</small></p>
+					<p><small>You can check the status of your ticket in our Support Ticket History</small></p>
+					<button class="button button-balanced" ng-click="closeSuccess();">DONE</button>
+				</div>
+			</div>
+			<!-- end here-->
+		</div>
+		<div class="card ticketHistory" style="margin-top: 0px;">
+			<div class="list">
+				<div class="item item-icon-right item-divider" >
+					SUPPORT TICKET HISTORY
+					<div ng-click="slideDown();"> 
+						<i class="icon ion-android-arrow-dropdown-circle" ng-show="drop"></i>
+						<i class="icon ion-android-arrow-dropup-circle" ng-show="!drop"></i>
+						<!-- <i class="icon ion-android-arrow-dropdown-circle" ng-show="drop"></i>
+						ng-class="{active:((reportData|filter:{selected: true}).length)}" -->
+					</div>
+					
+				</div>
+				<div class="row" ng-repeat="p in complainHostiry" ng-show="drop">
+					<div class="col col-10 text-center col-center">
+						<i class="ion-android-alert" ng-show="p.Status=='In Progress'"></i>
+						<i class="ion-checkmark-circled" ng-show="p.Status=='Closed'"></i>
+					</div>
+					<div class="col col-center">
+						<p class="alertCol">{{dateFormat(p.Date)}} <br />{{p.Category}}</p>
+					</div>
+					<div class="col col-25 text-center col-center">
+						<p>{{p.TicketNumber}}</p>
+					</div>
+					<div class="col col-33 text-right col-center">
+						<i class="ion-loop" ng-show="p.Status=='In Progress'"></i>
+						<div class="starts" ng-show="p.Status=='Closed'" >
+							<!-- <i class="ion-android-star"></i>
+							<i class="ion-android-star"></i>
+							<i class="ion-android-star"></i>
+							<i class="ion-android-star"></i>
+							<i class="ion-android-star-outline"></i> -->
+							<div ng-show="p.Ratings != '-'" class="starts" ng-class="{'oneStar' : p.Ratings >= 1 && p.Ratings <= 2, 'threeStar' : p.Ratings >= 3 && p.Ratings <= 4, 'fiveStar' : p.Ratings == 5}">
+								<i ng-class="p.Ratings >= 1 ?'ion-android-star':'ion-android-star-outline'" ></i>
+								<i ng-class="p.Ratings >= 2 ?'ion-android-star':'ion-android-star-outline'" ></i>
+								<i ng-class="p.Ratings >= 3 ?'ion-android-star':'ion-android-star-outline'"></i>
+								<i ng-class="p.Ratings >= 4 ?'ion-android-star':'ion-android-star-outline'" ></i>
+								<i ng-class="p.Ratings == 5 ?'ion-android-star':'ion-android-star-outline'"></i>
+								
+							</div>	
+							<div ng-show="p.Ratings == '-'" ng-click="giveRating(p);">
+								<i class="ion-android-star-outline"></i>
+								<i class="ion-android-star-outline"></i>
+								<i class="ion-android-star-outline"></i>
+								<i class="ion-android-star-outline"></i>
+								<i class="ion-android-star-outline"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="row">
+					<div class="col col-10 text-center col-center">
+						<i class="ion-checkmark-circled"></i>
+					</div>
+					<div class="col col-center">
+						<p>Feb 18, 2017 <br />Speed Issue</p>
+					</div>
+					<div class="col col-25 text-center col-center">
+						<p>ION-S-1234</p>
+					</div>
+					<div class="col col-33 text-right col-center">
+						<div class="starts">
+							<i class="ion-android-star"></i>
+							<i class="ion-android-star"></i>
+							<i class="ion-android-star"></i>
+							<i class="ion-android-star"></i>
+							<i class="ion-android-star-outline"></i>
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</ion-content>
+</ion-pane>

@@ -1,0 +1,59 @@
+<ion-side-menus>
+  <ion-side-menu side="left" width="{{contentWidth-56}}" class="sideMenuBg">
+			<div ng-include="'templates/sidemenu.html'" ng-controller="sideMenuController"></div>
+  </ion-side-menu>
+  <ion-side-menu-content>
+		<ion-header-bar align-title="left" class="innerHdng">
+			<div class="buttons">
+				<button class="button button-icon icon ion-navicon" ng-click="toggleLeft()"></button>
+			</div>
+			<h1 class="title">HI, {{userData.Name | titleCase }}!</h1>
+			<div class="buttons">
+				<button class="button button-icon icon ion-power" ng-click="logout()"></button>
+			</div>
+		</ion-header-bar>
+		<ion-content padding="false" style="background: #fff3d3;">
+		
+		
+			<div class="statusBar">
+				<!-- <p><i class="ion-checkmark-round"></i><i class="ion-alert-circled">
+/i> YOUR SUBSCRIPTION IS UP TO DATE</p>
+			 -->
+			 <div class="statusBar" ng-show="userData.AccountStatus=='Inactive'">
+				<p><i class="ion-alert-circled"></i> INACTIVE</p>
+			</div>
+			<div class="statusBar" ng-show="userData.AccountStatus!='Inactive'">
+				<p><i class="ion-checkmark-round"></i> YOUR SUBSCRIPTION IS UP TO DATE</p>
+			</div>
+			</div>
+			<div class="userInfo">
+					<img src="img/userImage.jpg" class="userImage"/>
+					<h2>{{userData.Name | titleCase }}</h2>
+					<p ng-show="userData.Address!= 'NA'"><i class="ion-location"></i> {{userData.Address}}</p>
+			</div>
+			<div class="list landingLinkList">
+				<a class="item one item-icon-right" href="javascript: void(0);" ng-click="usage()"> <!-- ng-click="usage()" -->
+					Usage Statistics
+					<i class="icon ion-ios-arrow-right"></i>
+				</a>
+				<a class="item two item-icon-right" href="javascript: void(0);" ng-click="subscription()">
+					Subscription
+					<i class="icon ion-ios-arrow-right"></i>
+				</a>
+				<a class="item three item-icon-right" href="javascript: void(0);" ng-click="payments()">
+					Payments
+					<i class="icon ion-ios-arrow-right"></i>
+				</a>
+				<a class="item four item-icon-right" href="javascript: void(0);" ng-click="support()">
+					Support
+					<i class="icon ion-ios-arrow-right"></i>
+				</a>
+			</div>
+
+			
+			<div class="text-center">
+				<button class="button button-energized mrgn0" ng-click="upgradePlan();">UPGRADE PLAN</button>
+			</div>
+		</ion-content>
+  </ion-side-menu-content>
+</ion-side-menus>

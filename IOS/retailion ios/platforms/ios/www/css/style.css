@@ -1,0 +1,750 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(../fonts/roboto.woff) format('woff');
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.bodyBg {
+    background: url(../img/loginBg.jpg) no-repeat;
+    background-size: cover;
+}
+.sliderBg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000;
+    transition: all 0.4s linear 0.4s;
+    -webkit-transition: all 0.4s linear 0.4s;
+}
+.mrgnBtm0 {margin-bottom: 0px!important;}
+.mrgn0 {margin: 0px!important;}
+.loginWrapper {
+    background: #fff;
+    margin: 50px 20px;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 0px 1px 2px #000;
+    position: relative;
+}
+.loginWrapper:after, .loginWrapper:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    right: 10px;
+    background: #FAFAFA;
+    height: 15px;
+    border-radius: 3px 3px 0px 0px;
+}
+.loginWrapper:after {
+    top: -30px;
+    background: #E0E0E0;
+    left: 20px;
+    right: 20px;
+}
+.logoTxt {
+    text-align: center;
+    padding: 30px 0px 56px;
+}
+.logoTxt img {width: 190px;}
+.button-energized {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fe9823+0,fe781c+100 */
+    background: #fe9823; /* Old browsers */
+    background: -moz-linear-gradient(top,  #fe9823 0%, #fe781c 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #fe9823 0%,#fe781c 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #fe9823 0%,#fe781c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe9823', endColorstr='#fe781c',GradientType=0 ); /* IE6-9 */
+    border-radius: 0px;
+}
+.button.button-energized.activated {
+    background: #FC6F11!important;
+    border: 0px;
+}
+.loginForm .item {
+    background: #f6fafb;
+    border: 1px solid #f2f4f3;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+.loginForm .item input {
+    font-size: 1em;
+    height: 44px;
+}
+.innerHdng {
+    height: 56px;
+    background: #ff9b23;
+    color: #fff;
+    border-bottom: 1px solid #f39019;
+}
+.innerHdng.has-tab {border-bottom: 0px;}
+.innerHdng .title {
+    color: #fff;
+    line-height: 56px!important;
+    height: 56px;
+}
+.innerHdng .title.doubleLine {
+	line-height: 22px!important;
+    margin-top: 5px;
+}
+.innerHdng .title.doubleLine p {
+	color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9em;
+    margin: 0px;
+}
+.innerHdng .button {
+    color: #fff;
+}
+.innerHdng button:before {
+    font-size: 1.4em!important;
+}
+.headerTab {
+    background: #ff9b23;
+    color: #fff;
+    position: relative;
+    top: 56px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.headerTab .tab-item.active {
+    border-bottom: 2px solid #fff;
+}
+.has-header {
+    top: 56px;
+}
+ion-content.has-tab {
+    top: 106px;
+}
+.statusBar {
+    background: #fff7e0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+.statusBar p {
+    margin: 0px;
+    color: #616161;
+    padding: 14px 10px 10px;
+}
+.statusBar p i.ion-checkmark-round, .statusBar p i.ion-alert-circled {
+    color: #42bd41;
+    font-size: 2em;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.statusBar p i.ion-alert-circled {color: #ff5722;}
+.userInfo {
+    text-align: center;
+}
+.userInfo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 3px;
+    margin-top: 25px;
+}
+.userInfo h2 {
+    color: #616161;
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+.userInfo p {
+    color: #8c8c8c;
+    font-size: 1.1em;
+}
+.userInfo p i {font-size: 0.9em;}
+.landingLinkList {
+    margin-top: 35px;
+}
+.landingLinkList .item {
+    border: 0px;
+    margin-bottom: 2px;
+    color: #424242;
+    font-size: 1.4em;
+    padding: 20px;
+}
+.landingLinkList .item.activated {
+    color: #000;
+}
+.landingLinkList .item-icon-right {
+    padding-right: 54px;
+}
+.landingLinkList .item i {
+    font-size: 0.9em;
+}
+.landingLinkList .item.one {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fedbb3+0,fbceb0+100 */
+    background: #fedbb3; /* Old browsers */
+    background: -moz-linear-gradient(top,  #fedbb3 0%, #fbceb0 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #fedbb3 0%,#fbceb0 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #fedbb3 0%,#fbceb0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fedbb3', endColorstr='#fbceb0',GradientType=0 ); /* IE6-9 */
+
+}
+.landingLinkList .item.two {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffcb91+0,ffbe93+100 */
+    background: #ffcb91; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffcb91 0%, #ffbe93 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #ffcb91 0%,#ffbe93 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #ffcb91 0%,#ffbe93 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcb91', endColorstr='#ffbe93',GradientType=0 ); /* IE6-9 */
+
+}
+.landingLinkList .item.three {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#febe6b+0,f9a86f+100 */
+    background: #febe6b; /* Old browsers */
+    background: -moz-linear-gradient(top,  #febe6b 0%, #f9a86f 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #febe6b 0%,#f9a86f 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #febe6b 0%,#f9a86f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febe6b', endColorstr='#f9a86f',GradientType=0 ); /* IE6-9 */
+
+}
+.landingLinkList .item.four {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9af61+0,f99557+100 */
+    background: #f9af61; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f9af61 0%, #f99557 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #f9af61 0%,#f99557 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #f9af61 0%,#f99557 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9af61', endColorstr='#f99557',GradientType=0 ); /* IE6-9 */
+
+}
+.sideMenuBg {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#36434c+0,3c4a53+100 */
+    background: #36434c; /* Old browsers */
+    background: -moz-linear-gradient(top,  #36434c 0%, #3c4a53 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #36434c 0%,#3c4a53 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #36434c 0%,#3c4a53 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36434c', endColorstr='#3c4a53',GradientType=0 ); /* IE6-9 */
+
+}
+.sideMenuUserInfo {
+    text-align: center;
+    padding-top: 44px;
+}
+.sideMenuUserInfo > img {
+    width: 100px;
+    border-radius: 3px;
+}
+.sideMenuUserInfo > h2 {
+    font-weight: normal;
+    color: #d7d7d7;
+    font-size: 1.8em;
+    margin: 10px 0px;
+    font-family: 'Roboto';
+}
+.sideMenuUserInfo .row .col {
+    padding: 10px 10px 30px;
+}
+.sideMenuUserInfo .row .col strong {
+    display: block;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+    font-weight: normal;
+    color: #d7d7d7;
+}
+.sideMenuUserInfo .row .col label {
+    display: block;
+    font-size: 1.2em;
+    color: #8c8c8c;
+}
+.sidemenuLinkList .item {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3c4a53+0,36434c+100 */
+    background: #3c4a53; /* Old browsers */
+    background: -moz-linear-gradient(top, #3c4a53 0%, #36434c 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #3c4a53 0%,#36434c 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #3c4a53 0%,#36434c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c4a53', endColorstr='#36434c',GradientType=0 ); /* IE6-9 */
+    color: #818c94;
+    border: 0px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    font-size: 1.4em;
+    font-family: 'Roboto';
+}
+.sidemenuLinkList .item.activated {
+    color: #fff;
+}
+.sidemenuLinkList .item i {
+    font-size: 1.4em;
+}
+.sidemenuLinkList .item i.ion-ios-arrow-right {
+    font-size: 1em;
+}
+.sidemenuLinkList .item .badge {
+    top: 22px;
+    right: 48px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.sliderLogo {
+    text-align: center;
+    padding: 44px 0px;
+}
+.sliderLogo img {
+    max-width: 100%;
+    width: 240px;
+}
+.walkThroughtBox {
+    box-shadow: 0px 2px 4px #7b7b7b;
+}
+.walkThroughtBox ion-slide {
+    background: #fff;
+    min-height: 307px;
+}
+.walkThroughtBox ion-slide .button {
+    padding: 6px 18px;
+}
+.walkThroughtBox ion-slide > div {
+    text-align: center;
+}
+.walkThroughtBox ion-slide > div p {
+    width: 80%;
+    margin: 15px auto 110px;
+    font-size: 1.2em;
+    line-height: 26px;
+    color: #777;
+}
+.slider-pager {bottom: 40px;}
+.slider-pager .slider-pager-page.active {
+    color: #ff8b1b;
+}
+
+/*accodionial content*/
+.accordionList .list {
+    box-shadow: 0px 1px 3px #a7a7a7;
+}
+.accordionList .item.item-stable {
+    background: #fff;
+    border: 0px;
+    border-bottom: 1px solid #eaeaea;
+    margin-top: 1px;
+    position: relative;
+    font-size: 1em;
+    font-weight: bold;
+}
+.accordionList .item.item-stable.left-icon {padding-left: 40px;}
+.accordionList .item.item-stable.right-icon {padding-right: 40px;}
+.accordionList .item.item-stable.unread {color: #616161;}
+.accordionList .item.item-stable.read {color: #B5B6B8;}
+.accordionList .list > div .item.item-accordion {
+    border: 0px;
+}
+.accordionList .list > div:nth-child(odd) .item.item-stable {
+    background: #F4F8FB;
+}
+.accordionList .list > div:nth-child(odd) .item.item-accordion {
+    background: #F4F8FB;
+}
+.accordionList .list > div:first-child .item.item-stable {margin-top: 0px;}
+.accordionList .item.item-stable i {position: absolute;}
+.accordionList .item.item-stable .icon {
+    color: #B5B6B8;
+    font-size: 1.7em;
+    vertical-align: middle;
+    right: 10px;top: 12px;
+}
+.accordionList .item.item-stable .msgStatus {
+    left: 10px;top: 15px;
+    color: #616161;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+.accordionList .item.item-stable.unread .msgStatus {color: #616161;}
+.accordionList .item.item-stable.read .msgStatus {color: #B5B6B8;}
+.accordionList .list .item.item-accordion {
+    line-height: 38px;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-shadow: 0px 2px 1px #ccc;
+    margin-bottom: 3px;
+    transition: 0.09s all linear;
+}
+.accordionList .list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.accordionList .list .item.item-accordion.ng-hide-add,
+.accordionList .list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+.accordionList .list .item.item-accordion p {
+    white-space: normal;
+    line-height: 20px;
+    margin-bottom: 7px;
+}
+.accordionList .list .item.item-accordion .button {
+    vertical-align: middle;
+    line-height: 26px;
+    text-transform: uppercase;
+    font-family: arial!important;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.accordionList .list .item.item-accordion .button:before {
+    margin-right: 5px;
+}
+/* end here */
+.subscriptionContent {
+    padding-top: 12px;
+}
+.subscriptionContent > .divider {
+    height: 1px;
+    background: #ddd;
+    width: 100px;
+    margin: 12px auto 12px;
+}
+.subscriptionContent > strong {
+    display: block;
+    font-size: 1.6em;
+}
+.subscriptionContent > label {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: rgba(0,0,0,0.5);
+    margin: 10px 0px;
+}
+.subscriptionContent > label.curPlan {
+    margin-top: 44px;
+    margin-bottom: 0px;
+    display: block;
+}
+.subscriptionContent > h2 {
+    margin: 0px 0px 20px;
+}
+.subscriptionContent > p {
+    font-size: 1.6em;
+    font-weight: normal;
+    margin: 5px 0px 20px;
+}
+.subscriptionContent .button {
+    min-height: 90px;
+    padding-top: 20px;
+    margin: 0px;
+    box-shadow: 0px -1px 2px #ccc!important;
+}
+.subscriptionContent .button.button-energized span, .subscriptionContent .button.button-energized i {
+    color: rgb(255, 107, 1)!important;
+}
+.subscriptionContent .button span, .subscriptionContent .button i {
+    font-size: 1.6em;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.subscriptionContent .button i:before {
+    margin-right: 10px;
+}
+.subscriptionContent .button.button-energized, .subscriptionContent .button.button-energized.activated {
+    background: #FEF0E5!important;
+}
+.subscriptionContent .button.button-royal, .subscriptionContent .button.button-royal.activated {
+    background: #F3E5FC!important;
+}
+.subscriptionContent .button label {
+    color: #666;
+    display: block;
+}
+.subscriptionContent .button.activated {
+    opacity: 0.5;
+}
+.upgradeList {
+    background: #F6F6F6;
+}
+.upgradeList .col {
+    padding: 15px 5px;
+    border-bottom: 2px solid #fff;
+}
+.upgradeList .col.bgCol {background: #f0f0f0;}
+.upgradeList .col strong {
+    display: block;
+    color: #8300E2;
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+.upgradeList .col label {
+    color: #696969;
+    font-size: 1.2em;
+}
+.upgradeList .col .button {
+    color: #8300E2;
+}
+.supportForm {margin-bottom: 0px;}
+.supportForm .item {
+    border: 0px;
+}
+.supportForm .item select {
+    width: 95%;
+    height: 44px;
+    background: none;
+    border: 1px solid #bbb;
+}
+.supportForm .item textarea {
+    border: 1px solid #bbb;
+    width: 95%;
+    height: 70px;
+}
+.ticketHistory .list .item, .paymentHistory .list .item {background: #fff;}
+.ticketHistory .list .item.item-divider, .paymentHistory .list .item.item-divider {
+    padding-top: 20px;
+    font-weight: bold;
+    padding-bottom: 14px;
+}
+.ticketHistory .list .item.item-divider i, .paymentHistory .list .item.item-divider i {
+    color: #BABABA;
+    font-size: 1.8em;
+}
+.ticketHistory .row {border-top: 1px solid #ccc;}
+.ticketHistory .row .col {margin: 10px 0px;}
+.ticketHistory .row .col p {margin: 0px;}
+.ticketHistory .row .col i {font-size: 1.8em;}
+.ticketHistory .row .col i.ion-android-alert, 
+.ticketHistory .row .col p.alertCol, 
+.ticketHistory .row .col i.ion-loop {
+    color: #AE1912;
+}
+.ticketHistory .row .col i.ion-checkmark-circled {
+    color: #696969;
+}
+.ticketHistory .row .col .starts i {
+    color: #FF9B23;
+    font-size: 1.2em;
+}
+.supportResult, .supportResultSuccessful {padding: 44px 20px 20px;}
+.supportResult > i, .supportResultSuccessful > i {font-size: 5em;}
+.supportResult > i.ion-checkmark-round, .supportResultSuccessful > i.ion-checkmark-round {color: #42bd41;}
+.supportResult > i.ion-alert-circled {color: #ff5722;}
+.supportResult > p, .supportResultSuccessful > p.lg {
+    font-size: 1.8em;
+    color: #616161;
+    margin-bottom: 30px;
+    line-height: 36px;
+}
+.supportResult > p small {
+    font-size: 0.7em;
+    line-height: 22px;
+    display: block;
+    color: #616161;
+}
+.supportResult > .button {
+    background: #4D9501;
+    font-weight: bold;
+    width: 120px;
+    border-radius: 0px;
+}
+.supportResultSuccessful p {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+.supportResultSuccessful p span {
+    color: #4c4c4c;
+}
+.supportResultSuccessful p small {
+    color: #868686;
+    display: block;
+}
+.supportResultSuccessful .button {width: 120px;}
+.supportResultSuccessful .starts {
+    font-size: 3em;
+    color: #AFAFAF;
+    margin-bottom: 30px;
+}
+.supportResultSuccessful .starts.oneStar .ion-android-star {
+    color: #ffeb3b;
+}
+.supportResultSuccessful .starts.threeStar .ion-android-star {
+    color: #ff9b23;
+}
+.supportResultSuccessful .starts.fiveStar .ion-android-star {
+    color: #00a907;
+}
+.paymentHeaderText h2 {
+    color: #626262;
+    text-transform: uppercase;
+    font-size: 1.6em;
+    margin-top: 20px;
+}
+.paymentHeaderText h1 {
+    color: #FF9B23;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+.paymentHeaderText h1 i {vertical-align: middle;}
+.paymentHeaderText p {
+    color: #666;
+    font-size: 1.2em;
+    line-height: 22px;
+    margin-bottom: 15px;
+}
+.paynowTxt {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding: 15px 10px;
+}
+.paymenntsOpitons label.item .item-content {padding-left: 64px;padding-right: 16px;}
+.paymenntsOpitons label.item .item-content .ion-android-checkbox-outline-blank {
+    position: absolute;
+    left: 14px;
+    line-height: 40px;
+    font-size: 1.5em;
+    color: #9E9E9E;
+}
+.paymenntsOpitons label.item .item-content label {
+    float: right;
+    font-size: 1.5em;
+    color: #9A9A9A;
+}
+.paymenntsOpitons label.item .item-content span {line-height: 42px;}
+.paymenntsOpitons label.item .item-content label i {vertical-align: middle;}
+.paymenntsOpitons label.item .item-content label img {width: 30px;vertical-align: middle;}
+.paymenntsOpitons label.item-radio .radio-icon {
+    right: auto;
+    left: 0px;
+    line-height: 44px;
+}
+.paymenntsOpitons .item-radio input:checked + .radio-content .item-content, 
+.paymenntsOpitons .item-radio input:checked + .radio-content .radio-icon {
+    color: #ff9b23;
+}
+.paymenntsOpitons .item-radio input:checked + .radio-content .item-content .ion-android-checkbox-outline-blank {display: none;}
+.paymentshistoryList {border-top: 1px solid #bbb;padding: 0px;margin-bottom: 2px;}
+.paymentshistoryList:nth-child(odd) {background: #F4F8FB;}
+.paymentshistoryList .col {padding-top: 20px;padding-bottom: 10px;}
+.paymentshistoryList .col > label {display: block;font-size: 1.8em;color: #616161;}
+.paymentshistoryList .col > p {margin-bottom: 0px;}
+.paymentshistoryList .col > strong {font-size: 1.4em;color: #616161;font-weight: normal;}
+.loveYouWrapper hr {
+    border: 0px;
+    border-bottom: 1px solid #bbb;
+}
+.loveYouWrapper i {
+    color: #FF9B23;
+    font-size: 5em;
+    margin-top: 20px;
+    display: block;
+}
+.loveYouWrapper h1 {
+    color: #797979;
+    margin-top: 10px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+}
+.loveYouWrapper p {
+    color: #ABABAB;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+.cardBtn .button {
+    font-size: 1.8em;
+    color: #8501E1!important;
+    min-height: 100px;
+    padding-top: 15px;
+}
+.cardBtn .button label {
+    display: block;
+    color: #666;
+    font-size: 0.8em;
+    margin-bottom: 7px;
+}
+.cardBtn .button i {
+    font-size: 1.6em;
+    vertical-align: middle;
+}
+.userProfileList .item {
+    border: 0px;
+    padding-left: 76px;
+}
+.userProfileList .item .icon {
+    color: #A1A1A1;
+    height: auto;
+    top: 36px;
+}
+.userProfileList .item span {
+    color: #FF9B23;
+}
+.userProfileList .item input {
+    border-bottom: 1px solid #BDBDBD;
+    border-radius: 6px;
+    width: 90%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.userProfileList .item.setLHeight input {height: 44px;}
+.infoHeader {
+    background: url(../img/profile-header.png) no-repeat top center;
+    background-size: 100% 125px;
+    border: 9px solid #fff;
+    box-shadow: 0px 0px 1px #666;
+    margin: 6px;
+    width: calc(100% - 12px);
+}
+.infoHeader .col img, .infoHeader .col .editPhoto  {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    border-radius: 100%;
+    left: 30px;
+    top: 36px;
+}
+.infoHeader .col .editPhoto {
+    background: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    line-height: 150px;
+    font-size: 3em;
+    z-index: 9;
+}
+.infoHeader .col .editPhoto.activated  {background: rgba(0, 0, 0, 0.6);color: rgba(255, 255, 255, 0.8);}
+.infoHeader .col h2 {
+    color: #fff;
+    font-size: 2em;
+    margin-top: 30px;
+}
+.infoHeader .col p {
+    color: #BDBDBD;
+    font-size: 1.2em;
+}
+.infoHeader .col p b {color: #999;}
+
+
+/*
+ * This toggle style shows a winking "eye-con" (nyuk, nyuk).
+ * Open eye means "show," closed eye means "hide."
+ */
+.hideShowPassword-toggle {
+    background-image: url(img/wink.svg);
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    height: 100%;
+    overflow: hidden;
+    text-indent: -9999em;
+    width: 44px;
+}
+.hideShowPassword-toggle-hide {
+    background-position: -44px center;
+}
+input[type="text"]:readonly {
+    background: #ffffff !important;
+}
+input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly] {
+    background-color: #ffffff !important;
+    cursor: not-allowed;
+}
+.ionic_datepicker_popup .popup-body .selected_date_full {
+    background-color: #ff9b23!important;
+}
+.ionic_datepicker_popup .button_close{
+    background-color: #ff9b23!important;
+}
+.ionic_datepicker_popup .selected_date {
+    background-color: #ff9b23!important;
+}
+.ionic_datepicker_popup .today {
+    border: 1px solid #ff9b23!important;
+}
+.ionic_datepicker_popup .popup-body .button-clear {
+    color: #ff9b23!important;
+}
+.ionic_datepicker_popup .popup-body .year_select {
+    border-bottom: 1px solid #ff9b23!important;
+    
+}
+.ionic_datepicker_popup .popup-body .month_select{
+    border-bottom: 1px solid #ff9b23!important;
+}

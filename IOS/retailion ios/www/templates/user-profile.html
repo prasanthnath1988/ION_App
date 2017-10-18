@@ -1,0 +1,74 @@
+<ion-pane ng-controller="userProfileController">
+	<ion-header-bar align-title="left" class="innerHdng">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios-arrow-left" ng-click="back()"></button>
+		</div>
+		<h1 class="title">{{text}}</h1>
+		<!-- <h1 ng-show="canEdit" class="title">Edit Profile</h1>  -->
+		<div class="buttons">
+			<button class="button button-icon icon ion-power" ng-click="logout()"></button>
+		</div>
+	</ion-header-bar>
+	<ion-content padding="false" style="background: #F1F5F8;">
+		<div class="card" style="margin-top: 0px;">
+			<ul class="row infoHeader">
+				<li class="col">
+					<img ng-src="{{imgPath}}" class="userImage"> 
+					<label ng-show="canEdit" class="editPhoto" ng-click="openFile();"><i class="ion-camera"></i></label>
+				</li>
+				<li class="col">
+					<h2>{{userData.Name | titleCase }}</h2>
+					<p style="padding-top: 12%;">{{userData.CustomerCode}}</p>
+					<p>Customer since <br /> <b>{{dateFormat(userData.RegestrationDate)}}</b></p>
+				</li>
+			</ul>
+			<div class="list userProfileList">
+				<label class="item item-icon-left item-input item-floating-label">
+					<i class="icon ion-email"></i>
+					<span class="input-label">Email</span>
+					<input type="email" placeholder="Email" ng-model="Email" id="email" ng-disabled="!canEdit">
+				</label>
+				<label class="item item-icon-left item-input item-floating-label">
+					<i class="icon ion-iphone"></i>
+					<span class="input-label">Mobile</span>
+					<input type="number" placeholder="Mobile" ng-model="mobile" readonly>
+				</label>
+				<!-- <label class="item item-icon-left item-input item-floating-label">
+					<i class="icon ion-heart"></i>
+					<span class="input-label">D.O.B.</span>
+					<input type="date" placeholder="DOB" ng-model="userDataGuidance.mobile">
+				</label> -->
+				<label class="item item-icon-left item-input item-floating-label setLHeight">
+					<i class="icon ion-location"></i>
+					<span class="input-label">Address</span>
+					<input type="text" placeholder="Address" ng-model="Address" readonly>
+					<!-- <input type="text" placeholder="Lane">
+					<input type="text" placeholder="Pin">
+					<input type="text" placeholder="Dist"> -->
+				</label>
+			</div>
+			<!-- <div>
+				  <button ng-show="!canEdit" class="button button-balanced" ng-click="edit()" style=" width: 100%;">
+				  	Edit 
+				</button>  
+				<button ng-show="canEdit" class="button button-balanced" ng-click="updateCustomer()" style=" width: 50%;">
+				  	Save
+				</button>
+				<button ng-show="canEdit" class="button button-balanced" ng-click="cancel()" style=" width: 50%;">
+				  	Cancel
+				</button>
+			</div> -->
+			<div ng-show="!canEdit" class="padding">
+				<button class="button button-block button-balanced" ng-click="edit()" >Edit</button>
+			</div>
+			<div ng-show="canEdit" class="row">
+				<div class="col">
+					<button class="button button-block button-balanced" ng-click="updateCustomer()">Save</button>
+				</div>
+				<div class="col">
+					<button class="button button-block button-assertive" ng-click="cancel()">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-pane>

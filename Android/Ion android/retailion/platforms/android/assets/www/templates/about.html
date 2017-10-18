@@ -1,0 +1,33 @@
+<ion-pane>
+	<ion-header-bar align-title="left" class="innerHdng">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios-arrow-left" ng-click="back()"></button>
+		</div>
+		<h1 class="title">About Us</h1>
+		<div class="buttons">
+			<button class="button button-icon icon ion-power" ng-click="logout()"></button>
+		</div>
+	</ion-header-bar>
+	<ion-content padding="true" style="background: #F1F5F8;">
+		 
+		<div class="card" ng-repeat="group in about">
+			<!-- <h1>{{group.title}}</h1> -->
+		  <div class="item item-text-wrap">
+		  	 <p>{{group.message}}</p>
+		  </div>
+		</div>
+			<div >
+			
+					
+					
+				<!-- <ion-item class="item-stable right-icon unread" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+					{{group.title}}
+					<i class="icon" ng-class="isGroupShown(group) ? 'ion-android-remove-circle' : 'ion-android-add-circle'"></i>
+				</ion-item>
+				<ion-item class="item-accordion" ng-show="isGroupShown(group)">
+					<div ng-bind-html="group.message"></div>
+				</ion-item> -->
+			</div>
+		 
+	</ion-content>
+</ion-pane>
