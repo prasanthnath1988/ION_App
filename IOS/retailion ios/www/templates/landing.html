@@ -12,13 +12,11 @@
 				<button class="button button-icon icon ion-power" ng-click="logout()"></button>
 			</div>
 		</ion-header-bar>
-		<ion-content padding="false" style="background: #fff3d3;">
+		<ion-content padding="false" style="background: #fff3d3;display: none;">
 		
 		
 			<div class="statusBar">
-				<!-- <p><i class="ion-checkmark-round"></i><i class="ion-alert-circled">
-/i> YOUR SUBSCRIPTION IS UP TO DATE</p>
-			 -->
+				<!-- <p><i class="ion-checkmark-round"></i><i class="ion-alert-circled"></i> YOUR SUBSCRIPTION IS UP TO DATE</p>-->
 			 <div class="statusBar" ng-show="userData.AccountStatus=='Inactive'">
 				<p><i class="ion-alert-circled"></i> INACTIVE</p>
 			</div>
@@ -55,5 +53,27 @@
 				<button class="button button-energized mrgn0" ng-click="upgradePlan();">UPGRADE PLAN</button>
 			</div>
 		</ion-content>
+
+		<div class="speedo_wrapper">
+			<div class="tab_header_top">
+				<ul>
+					<li><span class="ping_icon">Ping</span><span class="val">00</span><span class="unit">ms</span></li>
+					<li><span class="download_icon">Download</span><span class="val">00</span><span class="unit">mbps</span></li>
+					<li><span class="upload_icon">Upload</span><span class="val">00</span><span class="unit">mbps</span></li>
+				</ul>
+			</div>
+			<div class="tab_content_body">
+				<div id="ping">
+					<div class="go">
+						Go
+					</div>
+				</div>
+				<div id="download">
+					
+				</div>
+				<div id="upload"></div>
+			</div>
+		</div>
+
   </ion-side-menu-content>
 </ion-side-menus>
