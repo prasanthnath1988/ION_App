@@ -274,6 +274,15 @@ angular.module('ION', ['ionic','ionic-datepicker','ionic-timepicker',
             url: null
         }
 	})
+	.state('speedtest', {
+		cache: false,
+		url: '/speedtest',
+		templateUrl: "templates/speed-test.html",
+		controller: 'speedTestController',
+		params: {
+            url: null
+        }
+	})
 	//$urlRouterProvider.otherwise('/landing');
 	
 	if(localStorage.getItem("newUser")=='Y' || localStorage.getItem("newUser")== undefined)

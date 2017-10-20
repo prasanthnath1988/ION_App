@@ -26,6 +26,10 @@ sideMenu
 			$scope.aboutus = function(){
 				$state.go('aboutus');
 			}
+			$scope.speedtest = function(){
+				$state.go('speedtest');
+			}
+			
 } ])
  .filter('titleCase', function() {
     return function(input) {

@@ -32,48 +32,45 @@
 		</div>
 	</ion-content>
 </ion-pane> -->
-
-<ion-pane> <ion-header-bar align-title="left"
-	class="innerHdng">
-<div class="buttons">
-	<button class="button button-icon icon ion-ios-arrow-left"
-		ng-click="back()"></button>
-</div>
-<h1 class="title">Usage Statistics</h1>
-<div class="buttons">
-	<button class="button button-icon icon ion-power" ng-click="logout()"></button>
-</div>
-</ion-header-bar> <ion-content padding="true" style="background: #F1F5F8;">
-<div class="card" style="height: 300px; width: 100%;" id="container">
-<span>dsdddasdadadsas</span>
-</div>
-<div class="card">
-	<div class="item item-text-wrap">
-		<div style="display: table-row">
-			<div
-				style="width: 30%; display: table-cell; color: #8e8e8f;">Total Quota</div>
-			<div style="width: 30%; display: table-cell; color: #8e8e8f;">Data Used</div>
-			<div style="width: 30%; display: table-cell; color: #8e8e8f;">Data Remaining</div>
-		</div>
-		<div style="display: table-row">
-			<div style="width: 30%; display: table-cell;">{{formatGB(usageDetails.TotalDataMB)}}</div>
-			<div style="width: 30%; display: table-cell;">{{formatGB(usageDetails.UsedDataMB)}}</div>
-			<div style="width: 30%; display: table-cell;">{{formatGB(usageDetails.RemainDataMB)}}</div>
-		</div>
-	</div>
-</div>
-
-<div class="subscriptionContent">
-	<button class="button button-clear button-full button-royal"
-		ng-click="upgradePlan()">
-		<label>Opt for a faster / extended duration plan</label> <i
-			class="ion-ios-paperplane"></i> <span>Upgrade Plan</span>
-	</button>
-</div>
-<!-- <div class="card cardBtn" style="margin-top: 0px;">
+<ion-pane>
+    <ion-header-bar align-title="left" class="innerHdng">
+        <div class="buttons">
+            <button class="button button-icon icon ion-ios-arrow-left" ng-click="back()"></button>
+        </div>
+        <h1 class="title">Usage Statistics</h1>
+        <div class="buttons">
+            <button class="button button-icon icon ion-power" ng-click="logout()"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content padding="true" style="background: #F1F5F8;">
+        <div class="card" style="height: 300px; width: 100%;" id="container">
+            <span>dsdddasdadadsas</span>
+        </div>
+        <div class="card">
+            <div class="item item-text-wrap">
+                <div style="display: table-row">
+                    <div style="width: 30%; display: table-cell; color: #8e8e8f;">Total Quota</div>
+                    <div style="width: 30%; display: table-cell; color: #8e8e8f;">Data Used</div>
+                    <div style="width: 30%; display: table-cell; color: #8e8e8f;">Data Remaining</div>
+                </div>
+                <div style="display: table-row">
+                    <div style="width: 30%; display: table-cell;">{{formatGB(usageDetails.TotalDataMB)}}</div>
+                    <div style="width: 30%; display: table-cell;">{{formatGB(usageDetails.UsedDataMB)}}</div>
+                    <div style="width: 30%; display: table-cell;">{{formatGB(usageDetails.RemainDataMB)}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="subscriptionContent">
+            <button class="button button-clear button-full button-royal" ng-click="upgradePlan()">
+                <label>Opt for a faster / extended duration plan</label> <i class="ion-ios-paperplane"></i> <span>Upgrade Plan</span>
+            </button>
+        </div>
+        <!-- <div class="card cardBtn" style="margin-top: 0px;">
 			<button class="button button-clear button-full button-royal" ng-click="upgradePlan()">
 				<label>Opt for a faster / extended duation plan</label>
 				<i class="ion-ios-paperplane"></i>
 				<span>Upgrade Plan</span>
 			</button>
-		</div> --> </ion-content> </ion-pane>
+		</div> -->
+    </ion-content>
+</ion-pane>
